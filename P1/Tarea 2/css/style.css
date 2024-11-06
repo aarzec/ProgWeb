@@ -1,0 +1,30 @@
+body {
+    background: hsl(0, 0%, 20%);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+img {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+}
+
+strong {
+    color: rgb(92, 92, 255);
+}
+
+dl {
+    background-color: rgba(126, 23, 23, 0.301);
+    padding: 10px;
+}
+
+dt {
+    color: rgb(255, 138, 138);
+}
+

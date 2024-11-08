@@ -31,3 +31,16 @@ dl {
 dt {
     color: rgb(255, 138, 138);
 }
+.amarillo {
+    color: yellow;
+}
+
+#lista {
+    color: greenyellow;
+}
+
+.container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}

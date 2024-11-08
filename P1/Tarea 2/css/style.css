@@ -2,7 +2,8 @@ body {
     background: hsl(0, 0%, 20%);
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
+    padding: 0;
+    margin: 0;
 }
 
 img {
@@ -13,6 +14,9 @@ img {
 footer {
     margin-top: 50px;
     text-align: center;
+    background-color: rgb(22, 22, 22);
+    margin-bottom: 0;
+    padding: 10px;
 }
 
 strong {
@@ -27,4 +31,3 @@ dl {
 dt {
     color: rgb(255, 138, 138);
 }
-

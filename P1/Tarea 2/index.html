@@ -8,24 +8,64 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <aside>
+        <h4>Artículos relacionados</h4>
+    </aside>
     <div class="container">
         <header>
             <center>
-                <h1 class="amarillo">Sobreviviendo a Ecuador</h1>
-                <h2>Un blog</h2>
-        
-                <img src="img/escape.jpeg" width="500" alt="Escapando">
+                <nav>
+                    <h1>Sobreviviendo a Ecuador</h1>
+                    Home | <a href="/P1/Tarea 3 Portafolio/">Portafolio</a> | <a href="http://komodroid.com">Enlace</a>
+                </nav>
+                
+                <figure>
+                    <img src="img/escape.jpeg" width="500" alt="Escapando">
+                    <figcaption>Límite territorial del Ecuador</figcaption>
+                </figure>
+
+                <div>
+                    <button class="boton">Visitar página</button>
+                </div>
             </center>
         
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi nostrum eius in ut enim quo sit iusto, beatae, nihil, quasi labore? Impedit, nihil iste numquam ducimus quia temporibus consequuntur aut.</p>
-        
-            <center>
-                <a href="https://komodroid.com/" target="_blank">
-                    <img width="400" src="img/click.png" alt="">
-                </a>
-            </center>
+            <p>Ecuador <em>(en quichua, Ecuador; en shuar, Ekuatur)</em>, oficialmente <b>República del Ecuador</b> (en quichua, Ecuadorpi Ripuwlika; en shuar, Ekuatur Nunka), es un país soberano constituido en un <span class="clasespan">Estado social, democrático, de derecho y plurinacional</span>, cuya forma de gobierno es la de una república presidencialista, unitaria y descentralizada. Está ubicado en la región noroccidental de América del Sur. </p>
         </header>
-    
+
+        <div>
+            Buscar: <input type="text" name="buscar"> <button id="buscar">Buscar</button>
+        </div>
+        
+        <div>
+            <form action="submit" method="post">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" placeholder="Nombres">
+                <label for="apellido">Apellidos</label>
+                <input type="text" name="apellido" id="apellido" placeholder="Apellidos">
+                <label for="password">Contraseña</label>
+                <input type="password" name="password" id="password">
+
+                <select name="select" id="select">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+
+        <section class="iniciarSesion">
+            <h2>Inicio de sesión</h2>
+            <form action="iniciarSesion" method="post">
+                <label for="usuario">Usuario:</label><br>
+                <input type="text" name="usuario" id="usuario"><br>
+                <label for="contrasena">Contraseña:</label><br>
+                <input type="password" name="contrasena" id="contrasena"><br>
+
+                <button type="submit">Iniciar sesión</button>
+            </form>
+        </section>
+
         <section>
             <div>
                 <center>
@@ -67,5 +107,10 @@
     <footer>
         &copy; 2024 Diseñado por AARZ
     </footer>
+
+    <div class="flexstyle">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad laboriosam earum exercitationem, cum fuga dolorem rem dolor, ullam pariatur repellat, eaque consequatur itaque obcaecati praesentium aliquid adipisci error alias officia.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod pariatur nam nemo, iste facilis sint eaque eligendi voluptates exercitationem architecto soluta? Perferendis sunt ea est maiores omnis totam illo aliquam?</p>
+    </div>
 </body>
 </html>

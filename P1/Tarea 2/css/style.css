@@ -44,3 +44,56 @@ dt {
     max-width: 800px;
     margin: 0 auto;
 }
+
+nav {
+    margin-bottom: 50px;
+}
+
+.clasespan {
+    color: green;
+}
+
+.boton {
+    color: blue;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}   
+
+aside {
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: right;
+    font-style: italic;
+    background-color: rgb(83, 83, 83);
+}
+
+.hola > h6 {
+    color: green;
+}
+
+.flexstyle {
+    border: 3px dashed green;
+    display: flex;
+}
+
+form {
+    text-align: left;
+    display: block;
+}
+
+section.iniciarSesion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section.iniciarSesion button {
+    margin-top: 10px;
+    background-color: green;
+    color: white;
+}

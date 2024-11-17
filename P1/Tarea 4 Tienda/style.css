@@ -1,0 +1,55 @@
+body, html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    background-color: rgb(18, 18, 156);
+    color: white;
+    padding: 30px;
+}
+
+nav {
+    display: flex;
+    background-color: white;
+    justify-content: space-around;
+}
+
+section.content {
+    width: 70vw;
+    background-color: rgb(255, 255, 160);
+    padding: 20px;
+}
+
+main {
+    display: flex;
+}
+
+.aside {
+    background-color: rgb(181, 198, 255);
+}
+
+.asidederecha {
+    width: 30vw;
+    float: right;
+}
+
+
+div.phone {
+    font-size: 300px;
+}
+
+footer {
+    background-color: rgb(18, 18, 156);
+    color: white;
+    padding: 30px;
+}
+
+footer div {
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+}

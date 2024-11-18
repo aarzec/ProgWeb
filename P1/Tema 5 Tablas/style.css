@@ -18,7 +18,7 @@ body {
     color: black;
 }
 
-/* th {
+th {
     border: 1px solid white;
     background-color: rgb(102, 102, 102);
     color: white;
@@ -26,7 +26,7 @@ body {
 
 td {
     background-color: rgb(219, 219, 219);
-} */
+}
 
 article {
     display: flex;

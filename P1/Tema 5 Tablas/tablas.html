@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas HTML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Tablas</h1>
+    </header>
+    <section>
+        <p>Uso de la etiqueta <em>table</em> para el manejo de envío o recibo de información.</p>
+    </section>
+    <article>
+        <table frame="void" rules="rows" class="tableStyle" border="2px" cellpadding="10px" cellspacing="0px">
+            <caption>Listado de personas</caption>
+            <thead>
+                <tr>
+                    <th align="center" colspan="2" width="300px">Nombres</th>
+                    <th align="center" width="100px">Edad</th>
+                </tr>
+            </thead>
+            <colgroup>
+                <col>
+                <col style="width: 500px; background-color: rgb(229, 255, 0);">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>Andrés</td>
+                    <td>Romero</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>Diego</td>
+                    <td>Gamboa</td>
+                    <td>30</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2"><b>Total</b></td>
+                    <td><b>2</b></td>
+                </tr>
+            </tfoot>
+        </table>
+    </article>
+</body>
+</html>

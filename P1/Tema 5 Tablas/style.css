@@ -1,0 +1,38 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: rgb(49, 49, 49);
+    color: white;
+}
+
+.tableStyle {
+    border-style: double;
+    border-color: rgb(0, 255, 55);
+    background-color: white;
+    color: black;
+}
+
+/* th {
+    border: 1px solid white;
+    background-color: rgb(102, 102, 102);
+    color: white;
+}
+
+td {
+    background-color: rgb(219, 219, 219);
+} */
+
+article {
+    display: flex;
+    justify-content: center;
+}
+
+caption {
+    color: white;
+}

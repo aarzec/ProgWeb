@@ -1,0 +1,60 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url("/P1/Tema\ 6\ Login/img/cotopaxi.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+section.form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+section.form form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+section.form form input {
+    margin-top: 15px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 10px 0;
+}
+
+
+section.form form input::placeholder {
+    color: black;
+}
+
+
+section.form form a {
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(90deg, rgb(192, 0, 0) 0%, rgb(200, 223, 0) 100%);
+    margin-top: 30px;
+    text-align: center;
+    border-radius: 50px;
+}
+
+

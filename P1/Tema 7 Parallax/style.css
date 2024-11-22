@@ -1,0 +1,55 @@
+body, html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #cccccc;
+}
+
+header {
+    background-color: blueviolet;
+}
+
+section {
+    padding: 20px;
+}
+
+.section1 {
+    color: white;
+    height: 450px;
+    background-image: url("img/angular-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.section2 {
+    color: white;
+    height: 500px;
+    background-image: url("https://picsum.photos/1920/1080");
+    background-size: cover;
+}
+
+
+.section3 {
+    color: white;
+    height: 500px;
+    background-image: url("img/angular-bg2.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.section4 {
+    height: 1000px;
+}
+
+

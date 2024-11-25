@@ -11,6 +11,7 @@ body, html {
 body {
     min-height: 100vh;
     background-color: #cccccc;
+    transition: 0.3s background-colorz ease-in-out;
 }
 
 .card {
@@ -30,7 +31,43 @@ body {
     background-image: url("/P1/Tema\ 7\ Parallax/img/angular-bg.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 700px;
+
+    transition: 0.3s all ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-header button {
+    display: none;
+    transform: scaleX(-2) scaleY(2);
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.card-header button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+
+body:has(.card-header:hover) {
+    background-color: black;
+}
+
+.card-header:hover {
+    background-size: 800px;
+    filter: brightness(0.6);
+    transform: scaleX(-1);
+}
+
+.card-header:hover button {
+    display: block;
 }
 
 .card-content {

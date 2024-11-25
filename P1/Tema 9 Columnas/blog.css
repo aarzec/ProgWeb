@@ -1,0 +1,106 @@
+body, html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: url("img/img.jpg");
+    background-repeat: none;
+    background-size: cover;
+}
+
+nav .titulo {
+    background-color: rgb(66, 66, 121);
+    color: white;
+    padding: 40px 10%;
+}
+
+nav h1 {
+    font-size: 2rem;
+}
+
+nav .links {
+    background-color: rgb(158, 158, 224);
+    padding: 15px 10%;
+    display: flex;
+    gap: 30px;
+}
+
+
+nav .links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+main {
+    display: flex;
+    gap: 20px;
+    padding: 40px 10px 40px 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.articulos {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+article {
+    position: relative;
+}
+
+.fecha {
+    background-color: rgb(66, 66, 121);
+    position: absolute;
+    left: -100px;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
+    width: 90px;
+    height: 90px;
+    text-align: center;
+}
+
+.contenido {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contenido .texto {
+    flex: 2 2 200px;
+}
+
+.contenido img {
+    flex: 0 0 100px;
+}
+
+.fecha h1 {
+    font-size: 2rem;
+}
+
+aside {
+    background-color: rgba(255, 255, 255, 0.719);
+    border-radius: 10px;
+    padding: 10px;
+    min-width: 200px;
+    max-height: 200px;
+}
+
+footer {
+    background-color: rgb(66, 66, 121);
+    color: white;
+    padding: 40px 10%;
+}
+
+article {
+    margin-bottom: 25px;
+}

@@ -1,0 +1,49 @@
+body, html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    height: 100%;
+
+}
+
+.container {
+    display: flex;
+    border: 1px solid blue;
+    height: 500px;
+
+    width: 400px;
+}
+
+.container div {
+    height: 50px;
+}
+
+.item-1 {
+    background-color: red;
+    /* flex: 0 0 100px; */
+
+    /* Detalle */
+    flex-grow: 0; /* Controla como crece un elem. segpun su espacio disponible */
+    flex-shrink: 0; /* Controla como se encoge un elem, cuando falta espacio */
+    flex-basis: 200px; /* Define el tamaño inicial */
+}
+
+.item-2 {
+    flex: 2 2 200px;
+    background-color: greenyellow;
+}
+
+.item-3 {
+    flex: 1 1 100px;
+    background-color: chocolate;
+}
+
+

@@ -1,0 +1,64 @@
+body, html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    height: 100%;
+
+}
+
+.section1 {
+    border: 1px solid red;
+    height: 2000px;
+    position: relative;
+
+    top: 100px;
+}
+
+.article1 {
+    border: 1px solid blueviolet;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+}
+
+.article2 {
+    border: 1px solid greenyellow;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+
+    bottom: 0;
+}
+
+.article3 {
+    border: 1px solid salmon;
+    height: 100px;
+    width: 100px;
+}
+
+.article4 {
+    border: 1px solid turquoise;
+    height: 100px;
+    width: 100px;
+    position: fixed;
+
+    bottom: 30px;
+    right: 30px;
+}
+
+.container {
+    transform-style: preserve-3d;
+    transform: rotateX(4deg) rotateY(4deg) rotateZ(20deg);
+    border: 5px solid hotpink;
+}

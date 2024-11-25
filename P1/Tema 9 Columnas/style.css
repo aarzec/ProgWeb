@@ -1,0 +1,25 @@
+body, html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    transition: 0.3s background-colorz ease-in-out;
+}
+
+#noticias {
+    width: 500px;
+    padding: 10px;
+    border: 1px solid seagreen;
+    
+    /* Implementando columnas al artículo */
+    column-count: 4;
+    column-gap: 10px;
+    column-rule: 1px solid purple;
+}

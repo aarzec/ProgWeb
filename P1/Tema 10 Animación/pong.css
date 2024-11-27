@@ -1,0 +1,76 @@
+body, html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pong {
+    width: 500px;
+    height: 500px;
+    background-color: black;
+    position: relative;
+}
+
+.bola {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+
+    animation-name: ani-bola;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes ani-barra {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(330px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes ani-bola {
+    0% {
+        transform: translateX(50px);
+    }
+    50% {
+        transform: translateX(250px) translateY(440px);
+    }
+    100% {
+        transform: translateX(400px) translateY(10px);
+    }
+}
+
+.barra {
+    width: 150px;
+    height: 30px;
+    background-color: green;
+    border-radius: 50px;
+
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+
+    animation-name: ani-barra;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+

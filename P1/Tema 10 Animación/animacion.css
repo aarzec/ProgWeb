@@ -1,0 +1,88 @@
+body, html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: blanchedalmond;
+    padding: 50px;
+}
+
+/* Los keyframes en CSS se ultizan para animar propiedades de CSS. Se utilizan para definir animaciones, permite crear una secuencia de fotogramas claves */
+
+@keyframes cambiarcolores {
+    0% {
+        background-color: #e8e8e8;
+    }
+    25% {
+        background-color: #fa1;
+        scale: 0.5;
+    }
+    50% {
+        background-color: rgb(151, 98, 0);
+        scale: 1.1;
+    }
+    75% {
+        background-color: rgb(151, 98, 0);
+        scale: 0.5;
+    }
+    100% {
+        background-color: #e8e8e8;
+    }
+}
+
+@keyframes volar {
+    0% {
+        background-color: #e8e8e8;
+    }
+    20% {
+        transform: translate(200px, 0);
+    }
+    30% {
+        transform: translate(200px, 0) rotate(90deg);
+    }
+    40% {
+        transform: translate(200px, 200px) rotate(90deg);
+    }
+    50% {
+        transform: translate(200px, 200px) rotate(180deg);
+    }
+    100% {
+    }
+}
+
+.circulo {
+    margin-top: 50px;
+    background-color: #e8e8e8;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px gray;
+
+    animation-name: cambiarcolores;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+
+    animation-timing-function: step-end;
+}
+
+.avion {
+    animation-name: volar, cambiarcolores;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    font-size: 3rem;
+
+    background-color: #e8e8e8;
+    padding: 20px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    text-shadow: 0 0 3px black;
+    box-shadow: 0 0 10px gray;
+}

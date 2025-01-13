@@ -2,8 +2,11 @@
  * Universidad de las Fuerzas Armadas - ESPE
  * Nombre: Andrés Romero
  * Fecha: 13/01/2025
+ * Prueba parcial 2 - Desarrollo Web
  */
 
+
+// Abstrae las propiedades de un producto
 class Producto {
     constructor(nombre, precio, cantidad, categoria) {
         this.nombre = nombre;
@@ -13,6 +16,7 @@ class Producto {
     }
 }
 
+// Abstrae las propiedades y métodos del inventario
 class Inventario {
     static #productos = [];
 
@@ -24,7 +28,7 @@ class Inventario {
         const productosOrdenados = this.#productos.sort((a, b) => a.precio - b.precio);
         console.log("--- Lista de productos (ascendente) ---");
         productosOrdenados.forEach((producto) => {
-            console.log("-> " + producto.nombre + ": $" + producto.precio + " | " + producto.cantidad + "x");
+            console.log("-> [" + producto.categoria + "] " + producto.nombre + ": $" + producto.precio + " | " + producto.cantidad + "x");
         });
     }
 
@@ -168,6 +172,7 @@ class Venta {
     }
 }
 
+// Genera el reporte avanzado
 function reporteAvanzado() {
     console.log("\n\n --- REPORTE AVANZADO ----");
 
@@ -216,6 +221,10 @@ function reporteAvanzado() {
     venta.realizarVenta("Banano", 5);
     venta.realizarVenta("Lechuga", 10);
     venta.realizarVenta("Tomate", 15);
+
+    const venta2 = new Venta();
+    venta2.realizarVenta("Banano", 5);
+    venta2.realizarVenta("Tomate", 3);
 
     venta.imprimirVenta();
     venta.realizarDescuento("verduras", 50);

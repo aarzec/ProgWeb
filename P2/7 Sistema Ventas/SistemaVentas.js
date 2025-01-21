@@ -1,179 +1,141 @@
-/****************************************************
-            SISTEMA DE VENTAS EN JS
-*****************************************************/
-//Clase Producto
-
 class Producto {
     static contadorProductos = 0;
-    //Modificar static
-    //Se utiliza para acceder directamente a traves de la clase
 
-    //Los metodos o propiedades no requieren que se creen instancias de la clase para ser utilizados
-    //Se pueden acceder directamente desde la clase
-    constructor(nombre, precio, stock, categoria){
+    constructor(nombre, precio, categoria, stock) {
         this.idProducto = ++Producto.contadorProductos;
         this.nombre = nombre;
-        this.precio = precio;
-        this.stock = stock;
+        this.setPrecio(precio); 
         this.categoria = categoria;
+        this.setStock(stock); 
     }
 
-    getIdProducto(){
+    getIdProducto() {
         return this.idProducto;
-    } 
+    }
 
-    getNombre(){
+    getNombre() {
         return this.nombre;
     }
-    setNombre(nombre){
+    setNombre(nombre) {
         this.nombre = nombre;
     }
 
-    getPrecio(){
+    getPrecio() {
         return this.precio;
     }
 
-    setPrecio(precio){
-        this.precio = precio;
+    setPrecio(precio) {
+        if (precio < 0) {
+            console.warn("Advertencia: El precio no puede ser negativo. Se asignará 0.");
+            this.precio = 0;
+        } else {
+            this.precio = precio;
+        }
     }
 
-    toString(){
-        return `idProducto: ${this.idProducto}, nombre: ${this.nombre}, precio: ${this.precio}, stock: ${this.stock}, categoría: ${this.categoria}`;
+    getStock() {
+        return this.stock;
+    }
+
+    setStock(stock) {
+        if (stock < 0) {
+            console.warn("Advertencia: El stock no puede ser negativo. Se asignará 0.");
+            this.stock = 0;
+        } else {
+            this.stock = stock;
+        }
+    }
+
+    toString() {
+        return `ID: ${this.idProducto}, Nombre: ${this.nombre}, Precio: $${this.precio}, Categoría: ${this.categoria}, Stock: ${this.stock}`;
     }
 }
 
-//Creación de la clase orden
-
-class Orden{
+class Orden {
     static contadorOrdenes = 0;
-    static get  MAX_PRODUCTOS(){ //Cuando se trabaja con constantes se debe utilizar mayúsculas
-        return 5; 
-
+    static get MAX_PRODUCTOS() {
+        return 5;
     }
 
-    constructor(){
+    constructor() {
         this.idOrden = ++Orden.contadorOrdenes;
         this.productos = [];
-        this.contadorProductosAgregados = 0;
+        this.descuentos = {}; 
     }
 
-    getIdOrden(){
+    getIdOrden() {
         return this.idOrden;
     }
 
-    agregarProducto(producto){
-        //Verificar si no hemos superado el maximo de productos existentes
-        if (this.productos.length >= Orden.MAX_PRODUCTOS){
-            console.log("No se pueden agregar más productos a la orden");
+    agregarProducto(producto) {
+        if (this.productos.length >= Orden.MAX_PRODUCTOS) {
+            console.error("Error: No se pueden agregar más productos a la orden.");
             return;
         }
-
-        // Validación stock
         if (producto.stock <= 0) {
-            console.log("No hay stock del producto");
+            console.error("Error: No hay stock del producto.");
             return;
         }
-
         producto.stock--;
         this.productos.push(producto);
+        console.log(`Producto agregado: ${producto.nombre} (ID: ${producto.idProducto})`);
     }
 
-    calcularTotal(){
+    establecerDescuento(categoria, porcentaje) {
+        if (porcentaje < 0 || porcentaje > 100) {
+            console.error("Error: El porcentaje de descuento debe estar entre 0 y 100.");
+            return;
+        }
+        this.descuentos[categoria] = porcentaje / 100;
+        console.log(`Descuento del ${porcentaje}% establecido para la categoría: ${categoria}`);
+    }
+
+    calcularTotal() {
         let totalVenta = 0;
-        for(const producto of this.productos){
-            totalVenta += producto.precio;
+        for (const producto of this.productos) {
+            let precioFinal = producto.precio;
+            const descuento = this.descuentos[producto.categoria] || 0;
+            precioFinal *= (1 - descuento);
+            totalVenta += precioFinal;
         }
         return totalVenta;
     }
 
-    mostrarOrden(){
-        let productosOrden = "";
-        for(const producto of this.productos){
-            productosOrden += `\n ${producto.toString()}\n`;
-        }
-        console.log(`Orden: ${this.idOrden}, Total: $ ${this.calcularTotal()}, Productos: ${productosOrden}`);
+    calcularImpuestos() {
+        return this.calcularTotal() * 0.15;
     }
 
-    descuentoCategoria(categoria, porcentaje){
-        for(const producto of this.productos){
-            if(producto.categoria === categoria){
-                let descuento = producto.precio * porcentaje / 100;
-                producto.precio -= descuento;
-            }
+    mostrarOrden() {
+        console.log(`\n_______ Detalles de la Orden #${this.idOrden} _______`);
+        console.log(`Total sin IVA: $${this.calcularTotal()}`);
+        console.log(`IVA (15%): $${this.calcularImpuestos()}`);
+        console.log(`Total con IVA: $${(this.calcularTotal() + this.calcularImpuestos())}`);
+        console.log("\nProductos en la orden:");
+        for (const producto of this.productos) {
+            let precioFinal = producto.precio;
+            const descuento = this.descuentos[producto.categoria] || 0;
+            precioFinal *= (1 - descuento);
+            console.log(`${producto.toString()} - Precio con descuento: $${precioFinal}\n`);
         }
+        console.log("___________________________");
+    }
+
+    listarProductosPorPrecio() {
+        return [...this.productos].sort((a, b) => b.precio - a.precio);
     }
 }
 
-let producto1 = new Producto("Pantalon", 200, 50, "Ropa");
-let producto2 = new Producto("Teléfono", 300, 30, "Electrónica");
-console.log(producto1);
-console.log(producto2);
 
+let producto1 = new Producto("Pantalon", 200, "Ropa", 10);
+let producto2 = new Producto("Telefono", 300, "Electronica", 5);
+let producto3 = new Producto("Zapatos", 60, "Calzado", 3);
 
-let orden1 = new Orden(); //Objeto de la clase Orden
+let orden1 = new Orden();
+orden1.establecerDescuento("Electronica", 10); 
 orden1.agregarProducto(producto1);
 orden1.agregarProducto(producto2);
 orden1.mostrarOrden();
 
-let orden2 = new Orden();
-let producto3 = new Producto("Zapatos", 60, 50, "Calzado");
-orden2.agregarProducto(producto3);
-orden2.agregarProducto(producto1);
-orden2.agregarProducto(producto2);
-orden2.agregarProducto(producto3);  
-orden2.agregarProducto(producto3);  
-orden2.agregarProducto(producto3);  
-orden2.mostrarOrden();
-
-orden2.descuentoCategoria("Electrónica", 10);
-
-//Descuentos por categoría
-
-//Crear una propiedad categoria en la clase Producto
-//Los productos de la categoria electronica debe tener un descuento del 10% al calcular el total de su venta
-
-//Implementar un método calcularImpuestos() que calcule el 15% de impuestos sobre el total de la venta
-
-//Listar productos por precio descendente
-
-//Asegurarse que los precios no pueden ser negativos al establecerlos en la clase producto.
-
-
-
-
-
-
-
-
-//************************************************
-class Calculadora{
-    //Método estático
-    static sumar(a, b){
-        return a + b;
-    }
-}
-
-//Acceso al método estático directamente desde la clase
-console.log(Calculadora.sumar(2, 3));
-
-//No se puede acceder directamente desde la instancia
-const calc = new Calculadora();
-//console.log(calc.sumar()); //Undefined
-
-
-class Contador{
-    static totalInstancias = 0;
-    constructor(){
-        Contador.totalInstancias++;
-
-    }
-    static mostrarInstancias(){
-        return `Se ha creado ${Contador.totalInstancias} instancias`;
-    }
-}
-
-const contador1 = new Contador();
-const contador2 = new Contador();
-console.log(Contador.mostrarInstancias()); //Se ha creado 2 instancias
-
-
+console.log("Productos ordenados por precio descendente:");
+let productosOrdenados = orden1.listarProductosPorPrecio();
+productosOrdenados.forEach((producto) => console.log(producto.toString()));

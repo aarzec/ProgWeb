@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write</title>
+</head>
+<body>
+    <button onclick="mostrar()">Mostrar</button>
+    <h1 id="titulo">Titulo</h1>
+    <img src="img/asalto.webp" alt="" width="200" height="300">
+
+    <h3>Snoopy</h3>
+    <img src="img/5.png" alt="" id="snoopy" height="500" width="auto">
+
+    <script>
+        function mostrar() {
+            document.getElementById("titulo").innerHTML = "Nuevo titulo";
+            document.getElementById("titulo").style.color = "green";
+            document.getElementsByTagName("img").item(0).src = "img/escape.jpeg";
+        }
+
+        // Crea una función que permita el cambio de una imagen cada dos o tres segundos
+        let imgs = [
+            "img/1.avif",
+            "img/2.avif",
+            "img/3.png",
+            "img/4.avif",
+            "img/5.png",
+        ]
+        let imgIndex = 0;
+
+        const imgCambiar = document.getElementById("snoopy");
+        setInterval(() => {
+            if (imgIndex >= imgs.length) {
+                imgIndex = 0;
+            }
+            const img = imgs[imgIndex];
+            imgCambiar.src = img;
+
+            imgIndex++;
+        }, 3 * 1000);
+
+    </script>
+</body>
+</html>

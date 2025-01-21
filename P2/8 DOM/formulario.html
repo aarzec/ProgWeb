@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios JS</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <form id="formulario" action="">
+        Nombre: <input type="text" name="nombre" value="Juan">
+        <br>
+        Apellido: <input type="text" name="apellido" value="Perez">
+        <br>
+        Mail: <input type="email" name="email" value="holaq@google.com">
+    </form>
+    <button onclick="mostrarValores()" type="submit">Mostrar</button>
+    <div id="valores"></div>
+    <script>
+        function mostrarValores() {
+            let formulario = document.forms["formulario"];
+            console.log(formulario)
+
+            let texto = "";
+
+
+            let nombre = formulario["nombre"].value;
+            let apellido = formulario["apellido"].value;
+            let email = formulario["email"].value;
+
+            document.getElementById("valores").innerHTML = `${nombre}<br>${apellido}<br>${email}`;
+        }
+
+        document.write("Saludos Write!");
+    </script>
+</body>
+</html>

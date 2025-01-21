@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM en JavaScript</title>
+    <style>
+        .azul {
+            color: blue;
+        }
+        .rojo {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="cabecera" class="azul">Ejemplo del DOM en JavaScript</h1>
+        <p class="azul" id="parrafo">Saludos</p>
+        <p id="parrafo2" class="rojo">Saludos 2</p>
+        <p class="azul" id="parrafo3">Saludos 3</p>
+    </header>
+    <script>
+        // console.log("Saludos desde JavaScript");
+
+        // getElementById
+        let cabecera = document.getElementById("cabecera");
+        let parrafo = document.getElementById("parrafo");
+
+        console.log(`Valor de cabecera:  ${cabecera.innerHTML}`);
+        console.log(parrafo.innerHTML);
+
+        // cambiar su valor a través de innerHTML
+        parrafo.innerHTML = "Nuevo valor de párrafo";
+
+        // getElementByTagName
+        let parrafos = document.getElementsByTagName("p");
+        console.log(parrafos);
+        for (const parrafo of parrafos) {
+            console.log(parrafo.innerHTML);
+        }
+
+
+        // getElementByClassName
+        let azules = document.getElementsByClassName("azul");
+        console.log(`Número azules: ${azules.length}`);
+        
+        // querySelectorAll
+        let elementos = document.querySelectorAll("p.azul");
+        console.log("Elementos p azules: " + elementos.length)
+
+        elementos = document.querySelectorAll(".rojo");
+        console.log("Elementos rojos: " + elementos.length)
+        
+
+    </script>
+</body>
+</html>

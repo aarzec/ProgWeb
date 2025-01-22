@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de eventos con DOM en JS</title>
+</head>
+<!-- Este evento se ejecuta cuando se termina de cargar la página -->
+<body onload="entrar()">
+    <h1 id="titulo" onmouseover="rojo(this)">Manejo de eventos con DOM en JS</h1>
+    <p id="cookies" onmouseover="azul(this)">        </p>
+    <br>
+    Nombre: <input type="text" id="nombre" onchange="convertir(this)">
+    <br>
+    <h1 onmousedown="azul(this)" onmouseup="rojo(this)">Eventos onmouse</h1>
+
+
+    <script>
+        document.getElementById("titulo").onclick = cambiarTexto;
+        function cambiarTexto() {
+            const elemento = document.getElementById("titulo");
+            elemento.innerHTML= 'Nuevo título';
+        }
+
+        function entrar() {
+            // alert("Entrando a la página web");
+        }
+
+        let texto = '';
+        if (navigator.cookieEnabled) {
+            texto = "Cookies están habilitadas";
+        } else {
+            texto = "Cookies están deshabilitadas";
+        }
+        document.getElementById("cookies").innerHTML = texto;
+
+        function convertir(input) {
+            let nombre = input.value;
+            input.value = nombre.toUpperCase();
+        }
+
+        function rojo(titulo) {
+            titulo.style.color = "red";
+        }
+
+        function azul(evento) {
+            let titulo = evento.target;
+            titulo.style.color = "blue";
+        }
+
+        function verde(titulo) {
+            titulo.style.color = "green";
+        }
+
+        // Event listeners
+        document.getElementById("nombre").addEventListener("click", azul);
+    </script>
+</body>
+</html>

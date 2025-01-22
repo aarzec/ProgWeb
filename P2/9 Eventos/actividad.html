@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        --bg: #0000ff;
+        background-color: var(--bg);
+        display: flex;
+        position: relative;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    aside {
+        width: 300px;
+        background-color: rgb(44, 44, 44);
+        height: 100vh;
+        padding: 1rem;
+        color: white;
+    }
+
+    aside h2 {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    section.contenido {
+        padding: 1rem;
+    }
+
+    button.mostrar-panel {
+        position: absolute;
+        font-size: 2rem;
+        top: 5px;
+        left: 5px;
+    }
+
+    form>div {
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+
+    textarea {
+        width: 100%;
+        height: 100px;
+    }
+</style>
+
+<body>
+    <button class="mostrar-panel">⚙️</button>
+    <aside>
+        <h2>Configuración</h2>
+
+        <form action="">
+            <div>
+                Título de la página
+                <br>
+                <input type="text" id="input-titulo" value="Título de la página">
+            </div>
+            <div>
+                Color de la página
+                <br>
+                <input type="color" name="color" id="input-color" value="#0000ff">
+            </div>
+
+            <div>
+                Mostrar sección comentarios
+                <br>
+                <input type="checkbox" name="mostrar-comentarios" id="input-mostrar-comentarios" checked>
+            </div>
+        </form>
+    </aside>
+    <section class="contenido">
+        <h1 id="titulo">Título de la página</h1>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, explicabo odit soluta labore doloribus
+            tenetur dolorem laborum omnis earum quod ipsum, sint culpa. Incidunt magnam esse et totam. Impedit,
+            consequatur?</p>
+
+        <div id="comentarios">
+            <h2>Comentarios</h2>
+            <textarea name="comentarios"></textarea>
+        </div>
+
+        <ul>
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+            <li>Elemento 4</li>
+        </ul>
+    </section>
+    <script>
+        document.querySelectorAll("li").forEach(element => {
+            element.addEventListener("click", (ev) => {
+                ev.target.remove();
+            })
+        });
+
+        document.getElementById("input-titulo").addEventListener("change", (ev) => {
+            document.getElementById("titulo").innerHTML = ev.target.value;
+        });
+
+        document.getElementById("input-color").addEventListener("change", (ev) => {
+            document.body.setAttribute("style", "--bg: " + ev.target.value)
+        });
+
+        let c = true;
+        document.getElementById("input-mostrar-comentarios").addEventListener("change", (ev) => {
+            c = !c;
+            if (!c) {
+                document.getElementById("comentarios").style.display = "none";
+            } else {
+                document.getElementById("comentarios").style.display = "block";
+            }
+        });
+
+        let config = true;
+        const barraConfig = document.querySelector("aside");
+        document.querySelector("button.mostrar-panel").addEventListener("click", () => {
+            config = !config;
+            if (!config) {
+                barraConfig.style.display = "none";
+            } else {
+                barraConfig.style.display = "block";
+            }
+        });
+    </script>
+</body>
+
+</html>
